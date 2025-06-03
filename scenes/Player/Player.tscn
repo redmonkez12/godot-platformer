@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://vxgfen7x38lx"]
+[gd_scene load_steps=28 format=3 uid="uid://vxgfen7x38lx"]
 
 [ext_resource type="Script" uid="uid://br88kje5ci1nr" path="res://scenes/Player/Player.gd" id="1_ky53y"]
 [ext_resource type="Texture2D" uid="uid://dtbalcpei87e3" path="res://assets/player/player.png" id="2_bvqhm"]
@@ -7,24 +7,6 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v6fml"]
 radius = 6.0
 height = 20.0
-
-[sub_resource type="Animation" id="Animation_bvqhm"]
-resource_name = "idle"
-length = 0.4
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [13, 14, 15, 16]
-}
 
 [sub_resource type="Animation" id="Animation_ved6o"]
 length = 0.001
@@ -76,9 +58,28 @@ tracks/0/keys = {
 "values": [11, 12]
 }
 
+[sub_resource type="Animation" id="Animation_bvqhm"]
+resource_name = "idle"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [13, 14, 15, 16]
+}
+
 [sub_resource type="Animation" id="Animation_fxc31"]
 resource_name = "run"
 length = 0.4
+loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -93,14 +94,102 @@ tracks/0/keys = {
 "values": [0, 2, 3, 4]
 }
 
+[sub_resource type="Animation" id="Animation_puxyr"]
+resource_name = "jump"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [17]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xcisb"]
 _data = {
 &"RESET": SubResource("Animation_ved6o"),
 &"fall": SubResource("Animation_xcisb"),
 &"hurt": SubResource("Animation_socpp"),
 &"idle": SubResource("Animation_bvqhm"),
+&"jump": SubResource("Animation_puxyr"),
 &"run": SubResource("Animation_fxc31")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bvqhm"]
+animation = &"fall"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ved6o"]
+animation = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xcisb"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_socpp"]
+advance_mode = 2
+advance_expression = "velocity.y > 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mmokv"]
+advance_mode = 2
+advance_expression = "velocity.x < 0"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_dqp0f"]
+states/fall/node = SubResource("AnimationNodeAnimation_bvqhm")
+states/fall/position = Vector2(569.8, 99.2344)
+states/jump/node = SubResource("AnimationNodeAnimation_ved6o")
+states/jump/position = Vector2(380.3, 98.4688)
+transitions = ["Start", "jump", SubResource("AnimationNodeStateMachineTransition_xcisb"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_socpp"), "fall", "jump", SubResource("AnimationNodeStateMachineTransition_mmokv")]
+graph_offset = Vector2(-26.0399, -7.72499)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xcisb"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_socpp"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fxc31"]
+advance_mode = 2
+advance_expression = "int(velocity.x) != 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_puxyr"]
+advance_mode = 2
+advance_expression = "int(velocity.x) == 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dqp0f"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_tl8lu"]
+states/idle/node = SubResource("AnimationNodeAnimation_xcisb")
+states/idle/position = Vector2(417.72, 100.863)
+states/run/node = SubResource("AnimationNodeAnimation_socpp")
+states/run/position = Vector2(582.72, 99.3625)
+transitions = ["idle", "run", SubResource("AnimationNodeStateMachineTransition_fxc31"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_puxyr"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_dqp0f")]
+graph_offset = Vector2(143.22, 7.725)
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bvqhm"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ved6o"]
+advance_mode = 2
+advance_expression = "!is_on_floor()"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tl8lu"]
+advance_mode = 2
+advance_expression = "is_on_floor()"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_fxc31"]
+states/Air/node = SubResource("AnimationNodeStateMachine_dqp0f")
+states/Air/position = Vector2(541.62, 107.41)
+states/Grounded/node = SubResource("AnimationNodeStateMachine_tl8lu")
+states/Grounded/position = Vector2(357.62, 108.011)
+states/Start/position = Vector2(179.5, 106.809)
+transitions = ["Start", "Grounded", SubResource("AnimationNodeStateMachineTransition_bvqhm"), "Grounded", "Air", SubResource("AnimationNodeStateMachineTransition_ved6o"), "Air", "Grounded", SubResource("AnimationNodeStateMachineTransition_tl8lu")]
+graph_offset = Vector2(78.1198, 50.2125)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 0
@@ -123,3 +212,19 @@ libraries = {
 &"": SubResource("AnimationLibrary_xcisb")
 }
 autoplay = "idle"
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_fxc31")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="DebugLabel" type="Label" parent="."]
+offset_left = -8.0
+offset_top = -31.0
+offset_right = 266.0
+offset_bottom = 371.0
+scale = Vector2(0.0674908, 0.060151)
+theme_override_font_sizes/font_size = 96
+text = "000
+00000
+00000"

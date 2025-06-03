@@ -1,5 +1,4 @@
-res://scenes/LevelBase/LevelBase.tscn
-res://scenes/Player.tscn
 res://scenes/Player/Player.tscn
-res://scenes/Player/Player.gd
+res://scenes/LevelBase/LevelBase.tscn
 res://scenes/Player/PlayerCam.tscn
+res://scenes/Player/Player.gd
