@@ -1,4 +1,8 @@
-res://scenes/Player/Player.tscn
 res://scenes/LevelBase/LevelBase.tscn
+res://scenes/Player/Player.tscn
 res://scenes/Player/PlayerCam.tscn
+res://scenes/Enemies/EnemyBase.tscn
+res://classes/Constants.gd
+res://scenes/Enemies/EnemyBase.gd
 res://scenes/Player/Player.gd
+res://scenes/Enemies/Snail.tscn

@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://befueaarpc708"]
+
+[ext_resource type="Script" uid="uid://dhonsb6lcrbrn" path="res://scenes/Enemies/EnemyBase.gd" id="1_fiumk"]
+
+[node name="EnemyBase" type="CharacterBody2D"]
+script = ExtResource("1_fiumk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
