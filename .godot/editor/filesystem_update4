@@ -1,7 +1,10 @@
-res://classes/Constants.gd
+res://scenes/Enemies/frog.gd
 res://scenes/Enemies/Frog.tscn
 res://scenes/LevelBase/LevelBase.tscn
 res://scenes/Player/Player.tscn
 res://scenes/Player/PlayerCam.tscn
 res://scenes/Enemies/EnemyBase.tscn
 res://scenes/Enemies/Snail.tscn
+res://scenes/Enemies/Eagle.tscn
+res://scenes/Enemies/eagle.gd
+res://scenes/Enemies/EnemyBase.gd

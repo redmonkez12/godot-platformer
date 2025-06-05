@@ -1,7 +1,8 @@
-RayCast2D
-VisibleOnScreenNotifier2D
+Timer
 CollisionShape2D
 Area2D
+RayCast2D
+VisibleOnScreenNotifier2D
 AnimatedSprite2D
 CharacterBody2D
 Label
@@ -11,4 +12,3 @@ Camera2D
 Sprite2D
 TileMapLayer
 Node2D
-Node

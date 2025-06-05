@@ -60,7 +60,10 @@ reload={
 
 [layer_names]
 
+2d_render/layer_1="platforms"
+2d_render/layer_2="player_hit_box"
 2d_physics/layer_1="platforms"
+2d_physics/layer_2="player_hit_box"
 
 [rendering]
 

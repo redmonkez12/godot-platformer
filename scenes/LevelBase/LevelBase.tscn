@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dg7qoa0vmpfpk" path="res://assets/tiles/Terrain (16x16).png" id="1_nrmop"]
 [ext_resource type="PackedScene" uid="uid://vxgfen7x38lx" path="res://scenes/Player/Player.tscn" id="2_e7jje"]
-[ext_resource type="PackedScene" uid="uid://bugcq45ygshi8" path="res://scenes/Enemies/Frog.tscn" id="3_ny4ya"]
+[ext_resource type="PackedScene" uid="uid://daflrs3s6k3gq" path="res://scenes/Enemies/Eagle.tscn" id="3_ny4ya"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_e7jje"]
 tile_data = PackedInt32Array(65536, 786432, 0, 1, 786432, 1, 65537, 851968, 0, 65538, 917504, 0)
@@ -221,5 +221,8 @@ tile_set = SubResource("TileSet_u8cij")
 [node name="Player" parent="." instance=ExtResource("2_e7jje")]
 position = Vector2(16, 0)
 
-[node name="Frog" parent="." instance=ExtResource("3_ny4ya")]
-position = Vector2(210, -100)
+[node name="Eagle" parent="." instance=ExtResource("3_ny4ya")]
+position = Vector2(-71, -95)
+fly_speed = Vector2(35, 15)
+points = 1
+speed = 30.0
