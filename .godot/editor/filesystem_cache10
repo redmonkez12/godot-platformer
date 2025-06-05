@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1749013723
+::res://::1749139528
 icon.svg::CompressedTexture2D/CompressedTexture2D::7542928619977622601::1748962499::1748962503::1::::<><><>0<>0<>384aa34f685e0ee49337a3c00223c14e<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://assets/::1748962798
 ::res://assets/backgrounds/::1748962799
@@ -109,13 +109,18 @@ blue_button00.png::CompressedTexture2D/CompressedTexture2D::7785060178234581730:
 green_button00.png::CompressedTexture2D/CompressedTexture2D::7105623559441210152::1748962798::1748962799::1::::<><><>0<>0<>b664ae824f3683d8c8ac083c09e8f2ab<>res://.godot/imported/green_button00.png-11830825fe9e8b87dc2743bea46c9673.ctex::
 level_select_frame_128.png::CompressedTexture2D/CompressedTexture2D::8367156485756552456::1748962798::1748962799::1::::<><><>0<>0<>1cc97e50b82f5315bf9b0be474763bc5<>res://.godot/imported/level_select_frame_128.png-6905a51f28e8df6de4ffa8f4acd6d21c.ctex::
 yellow_button00.png::CompressedTexture2D/CompressedTexture2D::4581738789411473152::1748962798::1748962799::1::::<><><>0<>0<>1196ee342a261065263bdb684e558708<>res://.godot/imported/yellow_button00.png-1cc8c94abe47b1df349b810df1a19a7d.ctex::
-::res://classes/::1748962794
+::res://classes/::1749015916
+Constants.gd::GDScript::8333801213401792282::1749015916::0::1::::Constants<>RefCounted<><>0<>0<><>::
 ::res://globals/::1748962636
 ::res://resources/::1748962643
-::res://scenes/::1748967819
-::res://scenes/LevelBase/::1748970037
-LevelBase.tscn::PackedScene::3728572457391684426::1748970037::0::1::::<><><>0<>0<><>::uid://dg7qoa0vmpfpk::::res://assets/tiles/Terrain (16x16).png<>uid://vxgfen7x38lx::::res://scenes/Player/Player.tscn
-::res://scenes/Player/::1749013527
-Player.gd::GDScript::3649777490379415763::1749013527::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
-Player.tscn::PackedScene::1521819867329844513::1749013527::0::1::::<><><>0<>0<><>::uid://br88kje5ci1nr::::res://scenes/Player/Player.gd<>uid://dtbalcpei87e3::::res://assets/player/player.png<>uid://d3o3dolisqpd7::::res://scenes/Player/PlayerCam.tscn
-PlayerCam.tscn::PackedScene::9155157147388156834::1748970037::0::1::::<><><>0<>0<><>::
+::res://scenes/::1749014700
+::res://scenes/Enemies/::1749019947
+EnemyBase.gd::GDScript::7680306811214038171::1749018765::0::1::::EnemyBase<>CharacterBody2D<><>0<>0<><>::
+EnemyBase.tscn::PackedScene::2678719430839042067::1749019947::0::1::::<><><>0<>0<><>::uid://dhonsb6lcrbrn::::res://scenes/Enemies/EnemyBase.gd
+Snail.tscn::PackedScene::8517680615023543886::1749019947::0::1::::<><><>0<>0<><>::uid://befueaarpc708::::res://scenes/Enemies/EnemyBase.tscn<>uid://dgen4gej4fk7l::::res://assets/enemies/snail/snail.png
+::res://scenes/LevelBase/::1749019947
+LevelBase.tscn::PackedScene::3728572457391684426::1749019947::0::1::::<><><>0<>0<><>::uid://dg7qoa0vmpfpk::::res://assets/tiles/Terrain (16x16).png<>uid://vxgfen7x38lx::::res://scenes/Player/Player.tscn<>uid://dtma7qkma2qfm::::res://scenes/Enemies/Snail.tscn
+::res://scenes/Player/::1749019947
+Player.gd::GDScript::3649777490379415763::1749016137::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
+Player.tscn::PackedScene::1521819867329844513::1749019947::0::1::::<><><>0<>0<><>::uid://br88kje5ci1nr::::res://scenes/Player/Player.gd<>uid://dtbalcpei87e3::::res://assets/player/player.png<>uid://d3o3dolisqpd7::::res://scenes/Player/PlayerCam.tscn
+PlayerCam.tscn::PackedScene::9155157147388156834::1749019947::0::1::::<><><>0<>0<><>::
