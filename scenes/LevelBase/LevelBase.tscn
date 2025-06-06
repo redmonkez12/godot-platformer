@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://btefbqorvq38i"]
+[gd_scene load_steps=9 format=4 uid="uid://btefbqorvq38i"]
 
 [ext_resource type="Texture2D" uid="uid://dg7qoa0vmpfpk" path="res://assets/tiles/Terrain (16x16).png" id="1_nrmop"]
+[ext_resource type="Script" uid="uid://b3ftu8dgb38w" path="res://scenes/LevelBase/LevelBase.gd" id="1_u8cij"]
 [ext_resource type="PackedScene" uid="uid://vxgfen7x38lx" path="res://scenes/Player/Player.tscn" id="2_e7jje"]
 [ext_resource type="PackedScene" uid="uid://daflrs3s6k3gq" path="res://scenes/Enemies/Eagle.tscn" id="3_ny4ya"]
+[ext_resource type="PackedScene" uid="uid://bcb4spfa6chof" path="res://scenes/ObjectMaker.tscn" id="5_7hghd"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_e7jje"]
 tile_data = PackedInt32Array(65536, 786432, 0, 1, 786432, 1, 65537, 851968, 0, 65538, 917504, 0)
@@ -212,6 +214,7 @@ pattern_0 = SubResource("TileMapPattern_e7jje")
 
 [node name="LevelBase" type="Node2D"]
 position = Vector2(482, 692)
+script = ExtResource("1_u8cij")
 
 [node name="Platforms" type="TileMapLayer" parent="."]
 position = Vector2(0, 36)
@@ -223,6 +226,5 @@ position = Vector2(16, 0)
 
 [node name="Eagle" parent="." instance=ExtResource("3_ny4ya")]
 position = Vector2(-71, -95)
-fly_speed = Vector2(35, 15)
-points = 1
-speed = 30.0
+
+[node name="ObjectMaker" parent="." instance=ExtResource("5_7hghd")]

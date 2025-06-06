@@ -1,7 +1,9 @@
-Node
+AudioStreamPlayer2D
 Timer
+Sprite2D
 CollisionShape2D
 Area2D
+Node
 RayCast2D
 VisibleOnScreenNotifier2D
 AnimatedSprite2D
@@ -10,6 +12,4 @@ Label
 AnimationTree
 AnimationPlayer
 Camera2D
-Sprite2D
 TileMapLayer
-Node2D

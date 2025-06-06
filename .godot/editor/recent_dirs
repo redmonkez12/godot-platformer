@@ -1,7 +1,10 @@
+res://scenes
+res://globals
+res://scenes/Bullets
+res://resources
 res://scenes/Enemies
 res://assets/enemies/eagle
 res://assets/enemies/frog
 res://assets/enemies/snail
 res://scenes/Player
-res://scenes
 res://scenes/LevelBase
