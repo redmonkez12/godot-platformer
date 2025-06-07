@@ -1,8 +1,14 @@
+res://assets/sound
+res://scenes/Enemies
+res://assets/items
+res://
+res://Scenes
+res://Scenes/Enemies
+res://assets/explosion
 res://scenes/Bullets
 res://scenes
 res://globals
 res://resources
-res://scenes/Enemies
 res://assets/enemies/eagle
 res://assets/enemies/frog
 res://assets/enemies/snail

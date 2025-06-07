@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://daflrs3s6k3gq"]
+[gd_scene load_steps=12 format=3 uid="uid://cf4lipd2l5ish"]
 
 [ext_resource type="PackedScene" uid="uid://befueaarpc708" path="res://scenes/Enemies/EnemyBase.tscn" id="1_oix2t"]
 [ext_resource type="Script" uid="uid://bn8m2cmn3ju51" path="res://scenes/Enemies/eagle.gd" id="2_daeew"]
@@ -62,8 +62,8 @@ frame_progress = 0.310893
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 shape = SubResource("CircleShape2D_1npfb")
 
-[node name="PlayerDetector" type="RayCast2D" parent="." index="4"]
-target_position = Vector2(0, 300)
+[node name="PlayerDetector" type="RayCast2D" parent="." index="3"]
+target_position = Vector2(2.08165e-12, 250)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false

@@ -31,6 +31,8 @@ func flip_me() -> void:
 	animated_sprite_2d.flip_h = _player_ref.global_position.x > global_position.x
 
 func die() -> void:
+	SignalHub.emit_on_create_object(global_position, Constants.ObjectType.PICKUP)
+	SignalHub.emit_on_create_object(global_position, Constants.ObjectType.EXPLOSION)
 	set_physics_process(false)
 	queue_free()
 
